@@ -71,11 +71,11 @@ public class CalendarStuff {
    * @param    year  long containing four-digit year
    * @return         boolean which is true if the parameter is a leap year
    */
-   public static boolean isLeapYear( long year ) {
-      if ((year % 4 == 0) && (year % 100 != 0)) {
-       return true;
+  public static boolean isLeapYear( long year ) {
+    if ((year % 4 == 0) && (year % 100 != 0)) {
+     return true;
     } else {
-       return false;
+      return false;
     }
    }
 
@@ -109,7 +109,7 @@ public class CalendarStuff {
    public static boolean dateEquals( long month1, long day1, long year1, long month2, long day2, long year2 ) {
     if((month1 == month2) && (day1 == day2) && (year1 == year2)) {
       return true;
-    }else{
+    } else {
       return false;
     }
    }
@@ -141,8 +141,8 @@ public class CalendarStuff {
             return 1;
          } else {
            return 0;
+           }
          }
-        }
        }
     }
 
