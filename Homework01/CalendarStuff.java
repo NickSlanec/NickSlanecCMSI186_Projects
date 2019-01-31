@@ -72,11 +72,18 @@ public class CalendarStuff {
    * @return         boolean which is true if the parameter is a leap year
    */
   public static boolean isLeapYear( long year ) {
-    if ((year % 4 == 0) && (year % 100 != 0)) {
-     return true;
-    } else {
-      return false;
+    if (year % 4 == 0){
+      if (year % 100 == 0){
+        if (year % 400 == 0){
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
     }
+    return false;
    }
 
   /**
@@ -159,11 +166,11 @@ public class CalendarStuff {
       if (month <= 0 || day <= 0 || year < 0 || month > 12){
         return false;
       }
-      if ((days[(int) (month - 1)]) < day ) {
+      if ((isLeapYear(year) == false) && (days[(int) (month - 1)]) < day ) {
         return false;
       }
-      if (!isLeapYear(year) && month == 2 && day == 29 ){
-        return false;
+      if ((isLeapYear(year) == true) && (month == 2) && (day == 29)){
+        return true;
       }
       return true;
    }
@@ -275,7 +282,8 @@ public class CalendarStuff {
         dayCount = 0;
         return dayCount;
         }
-        if ((month1 > month2) && (compareDate(month1, day1, year1, month2, day2, year2) == -1)) {
+
+        if ((month1 >= month2) && (compareDate(month1, day1, year1, month2, day2, year2) == -1 )) {
           dayCount += ((year2 - (year1 + 1)) * 365);
           for (long monthHedge1 = month1; monthHedge1 <= 12; monthHedge1++){
             dayCount = dayCount + days[(int)(monthHedge1 - 1)];
@@ -291,6 +299,7 @@ public class CalendarStuff {
           }
           return dayCount;
         }
+
 
         for(long month = earlierMonth; month < laterMonth; month++){
           dayCount = dayCount + days[(int)(month - 1)];

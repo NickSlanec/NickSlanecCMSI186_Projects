@@ -1,13 +1,12 @@
 public class CountTheDays {
   public static void main (String [] args) {
-    CalendarStuff calendarStuff = new CalendarStuff();
-
-    long month1 = args [0];
-    long day1 = args [1];
-    long year1 = args [2];
-    long month2 = args [3];
-    long day2 = args [4];
-    long year2 = args [5];
-    long daysBetween = calendarStuff.daysBetween(month1, day1, year1, month2, day2, year2);
+    long month1 = Long.parseLong (args [0]);
+    long day1 = Long.parseLong (args [1]);
+    long year1 = Long.parseLong (args [2]);
+    long month2 = Long.parseLong (args [3]);
+    long day2 = Long.parseLong (args [4]);
+    long year2 = Long.parseLong (args [5]);
+    long daysBetween = CalendarStuff.daysBetween(month1, day1, year1, month2, day2, year2);
+    System.out.println("The amount of days between " + CalendarStuff.toMonthString((int) month1) + " " + (day1) + ", " + (year1) + " and " + CalendarStuff.toMonthString((int) month2) + " " + (day2) + ", " + (year2) + " is: " + daysBetween);
   }
 }
