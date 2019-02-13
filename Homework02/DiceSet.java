@@ -46,12 +46,17 @@ public class DiceSet {
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
    public DiceSet( int count, int sides ) {
-     this.count = count;
-     this.sides = sides;
-      ds = new Die[count];
-      for (int i = 0; i < count; i++){
-        ds[i] = new Die(sides);
-      }
+     try{
+       this.count = count;
+       this.sides = sides;
+        ds = new Die[count];
+        for (int i = 0; i < count; i++){
+          ds[i] = new Die(sides);
+        }
+     } catch (Exception e) {
+       System.out.println("Invalid Input");
+     }
+
    }
   /**
    * @return the sum of all the dice values in the set
@@ -122,6 +127,7 @@ public class DiceSet {
    * A little test main to check things out
    */
    public static void main( String[] args ) {
+     System.out.println("DiceSet Runs!");
    }
 
 }
