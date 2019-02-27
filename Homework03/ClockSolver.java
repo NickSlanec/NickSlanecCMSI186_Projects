@@ -50,9 +50,7 @@ public class ClockSolver {
    *                args[1] is the time slice; this is optional and defaults to 60 seconds
    */
    public static void main( String args[] ) {
-     ClockSolver cs = new ClockSolver();
      Clock clock = new Clock();
-     double[] timeValues = new double[3];
      System.out.println ("Welcome to the clock solver!");
      //Validate Input
      if (args.length == 0){
