@@ -1,0 +1,179 @@
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new clock: 
+    New clock created: 0:0:0.0
+    Testing validateAngleArg()....
+      sending '  2 degrees', expecting double value   2.0 - got 2.0
+Welcome to the clock solver!
+Welcome to the clock solver!
+Welcome to the clock solver!
+Welcome to the clock solver!
+Welcome to the clock solver!
+Your angle: 30.0
+Your time slice: 60.0
+Your elpsilon: 0.1
+Found that angle at: 1:0:0.0
+There are 1 instances of that angle
+Welcome to the clock solver!
+Your angle: 30.0
+Your time slice: 10.0
+Your elpsilon: 0.1
+Found that angle at: 1:0:0.0
+Found that angle at: 3:21:50.0
+Found that angle at: 5:21:50.0
+Found that angle at: 7:43:40.0
+Found that angle at: 9:43:40.0
+There are 5 instances of that angle
+Welcome to the clock solver!
+Your angle: 30.0
+Your time slice: 1.0
+Your elpsilon: 0.1
+Found that angle at: 0:5:27.0
+Found that angle at: 0:5:28.0
+Found that angle at: 1:0:0.0
+Found that angle at: 1:0:1.0
+Found that angle at: 1:10:54.0
+Found that angle at: 1:10:55.0
+Found that angle at: 2:5:27.0
+Found that angle at: 2:5:28.0
+Found that angle at: 2:16:22.0
+Found that angle at: 2:16:23.0
+Found that angle at: 3:10:55.0
+Found that angle at: 3:10:56.0
+Found that angle at: 3:21:49.0
+Found that angle at: 3:21:50.0
+Found that angle at: 3:21:51.0
+Found that angle at: 4:16:22.0
+Found that angle at: 4:16:23.0
+Found that angle at: 4:16:24.0
+Found that angle at: 4:27:17.0
+Found that angle at: 4:27:18.0
+Found that angle at: 5:21:50.0
+Found that angle at: 5:21:51.0
+Found that angle at: 5:32:44.0
+Found that angle at: 5:32:45.0
+Found that angle at: 5:32:46.0
+Found that angle at: 6:27:17.0
+Found that angle at: 6:27:18.0
+Found that angle at: 6:27:19.0
+Found that angle at: 6:38:12.0
+Found that angle at: 6:38:13.0
+Found that angle at: 7:32:45.0
+Found that angle at: 7:32:46.0
+Found that angle at: 7:43:40.0
+Found that angle at: 7:43:41.0
+Found that angle at: 8:38:13.0
+Found that angle at: 8:38:14.0
+Found that angle at: 8:49:7.0
+Found that angle at: 8:49:8.0
+Found that angle at: 9:43:40.0
+Found that angle at: 9:43:41.0
+Found that angle at: 9:54:35.0
+Found that angle at: 9:54:36.0
+Found that angle at: 10:49:8.0
+Found that angle at: 10:49:9.0
+Found that angle at: 11:0:2.0
+Found that angle at: 11:0:3.0
+Found that angle at: 11:54:35.0
+Found that angle at: 11:54:36.0
+There are 48 instances of that angle
+Welcome to the clock solver!
+Your angle: 75.23
+Your time slice: 60.0
+Your elpsilon: 0.1
+Found that angle at: 8:30:0.0
+There are 1 instances of that angle
+Welcome to the clock solver!
+Your angle: 75.23
+Your time slice: 7.0
+Your elpsilon: 0.1
+Found that angle at: 1:57:15.0
+Found that angle at: 3:2:42.0
+Found that angle at: 4:8:9.0
+Found that angle at: 5:13:36.0
+Found that angle at: 8:57:22.0
+Found that angle at: 10:2:49.0
+Found that angle at: 11:8:16.0
+There are 7 instances of that angle
+Welcome to the clock solver!
+Your angle: 75.23
+Your time slice: 1.3
+Your elpsilon: 0.1
+Found that angle at: 0:13:40.29999999999234
+Found that angle at: 0:13:41.59999999999229
+Found that angle at: 0:51:47.00000000009777
+Found that angle at: 1:19:7.600000000326872
+Found that angle at: 1:19:8.900000000327054
+Found that angle at: 1:57:14.300000000646833
+Found that angle at: 2:24:34.90000000053806
+Found that angle at: 2:24:36.20000000053733
+Found that angle at: 3:2:41.599999999258216
+Found that angle at: 3:2:42.89999999925749
+Found that angle at: 3:30:3.4999999983392627
+Found that angle at: 4:8:8.89999999706015
+Found that angle at: 4:8:10.199999997059422
+Found that angle at: 4:35:30.799999996143015
+Found that angle at: 5:13:36.1999999948639
+Found that angle at: 5:13:37.499999994863174
+Found that angle at: 5:40:58.09999999394495
+Found that angle at: 5:40:59.39999999394422
+Found that angle at: 6:19:4.799999992665107
+Found that angle at: 6:46:25.39999999174688
+Found that angle at: 6:46:26.699999991746154
+Found that angle at: 7:24:32.09999999046704
+Found that angle at: 7:51:52.699999989548814
+Found that angle at: 7:51:53.99999998954809
+Found that angle at: 8:29:59.39999998826897
+Found that angle at: 8:30:0.6999999882682459
+Found that angle at: 8:57:21.29999998735002
+Found that angle at: 9:35:26.699999990989454
+Found that angle at: 9:35:27.999999990992364
+Found that angle at: 10:2:48.59999999466527
+Found that angle at: 10:40:53.99999999978172
+Found that angle at: 10:40:55.29999999978463
+Found that angle at: 11:8:15.900000003457535
+Found that angle at: 11:8:17.200000003460445
+Found that angle at: 11:46:22.6000000085769
+There are 35 instances of that angle
+Welcome to the clock solver!
+Your angle: 90.0
+Your time slice: 2.5
+Your elpsilon: 0.1
+Found that angle at: 0:16:22.5
+Found that angle at: 0:49:5.0
+Found that angle at: 1:21:50.0
+Found that angle at: 1:54:32.5
+Found that angle at: 2:27:17.5
+Found that angle at: 3:0:0.0
+Found that angle at: 3:32:45.0
+Found that angle at: 4:5:27.5
+Found that angle at: 4:38:12.5
+Found that angle at: 5:10:55.0
+Found that angle at: 5:43:40.0
+Found that angle at: 6:16:22.5
+Found that angle at: 6:49:7.5
+Found that angle at: 7:21:50.0
+Found that angle at: 7:54:35.0
+Found that angle at: 8:27:17.5
+Found that angle at: 9:0:2.5
+Found that angle at: 10:5:30.0
+Found that angle at: 11:10:57.5
+There are 19 instances of that angle
+Welcome to the clock solver!
+Your angle: 180.0
+Your time slice: 1.8
+Your elpsilon: 0.1
+Found that angle at: 0:32:43.79999999996562
+Found that angle at: 1:38:11.40000000035161
+Found that angle at: 2:43:38.99999999992724
+Found that angle at: 3:49:6.5999999983396265
+Found that angle at: 4:54:34.19999999675201
+Found that angle at: 6:0:1.7999999951643986
+Found that angle at: 7:5:29.399999993576785
+Found that angle at: 8:10:56.99999999198917
+Found that angle at: 9:16:24.599999991645745
+Found that angle at: 10:21:52.1999999979962
+Found that angle at: 11:27:19.800000004346657
+There are 11 instances of that angle

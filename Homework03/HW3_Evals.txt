@@ -1,0 +1,92 @@
+
+Evaluation for homework 03: ClockSolver
+
+Clock and ClockSolver programs
+Includes running Clock main to observe tests
+Includes running automated ClockSolver tests
+   View testHW3.bat in your repo to see test parameters used
+============================================================
+
+Point structure for this assignment is one point wherever indicated.
+There are a total of ten points for running ClockSolver with various
+input values.  For each test, you get credit if you find *at least*
+one occurrence of the angle and log it's time.
+
+You get credit for the main() method for testing the Clock methods,
+since I gave that code to you for free.  If you didn't add any more
+tests to it, consider doing so from now on, so you'll get full credit
+for testing in the module.
+
+You also get credit for error checking code as follows:
+   if you error check in the main, you get freebie credit for the
+      error checking methods
+   if you error check by calling the ClockSolver method, you get
+      freebie credit for the other two error checking methods
+   if you error check using all three, GOOD FOR YOU!! You are an
+      increasingly competent Java programmer!!
+
+
+Points are awarded for the following items
+
+class Clock             : Exists, coding style acceptable   -  1 point
+Constructor             : Exists, works properly            -  1 point
+tick                    : works                             -  1 point
+getHourHandAngle        : works                             -  1 point
+getMinuteHandAngle      : works                             -  1 point
+getHandAngle            : works                             -  1 point
+getTotalSeconds         : works                             -  1 point
+toString                : works                             -  1 point
+main exists             : Exists                            -  1 point
+Test Code               : Contains some method test code    -  1 point
+
+class ClockSolver       : Exists, coding style acceptable   -  1 point
+Constructor             : Freebie, not really needed        -  1 point
+HandleInitialArguments  : works, freebie if not used        -  1 point
+main exists             : works                             -  1 point
+works as advertised     : passes all tests in the series    -  8 points
+							includes error checks (1 pt. for all)
+Files in Git            : two files required                -  2 points
+Coding Style overall    : coding style acceptable           -  1 point
+
+
+Total 25 out of 27 = 92.59% which is an A-minus
+
+I did get an infinite loop with your code when using a time slice value
+of 0.0, so your error checking needs a bit more attention for that.  I
+believe it was specified on the assignment page that the value needed
+to be larger than zero, and I remember talking about that in class.
+
+I also get an infinite loop when running with the time slice of 1801.0
+seconds.  That should be an error condition.  I even get an infinite
+loop when running the final test using the valid time slice of 1800.0
+seconds.
+
+Another thing to consider: instead of throwing an exception, try to
+put out some meaningful message and shut down gracefully.  For example,
+instead of:
+
+	if (args.length == 0){
+		throw new IllegalArgumentException ("Please enter an angle");
+	}
+
+consider:
+
+	if (args.length == 0){
+		System.out.println("Please enter an angle");
+		System.exit( 0 );
+	}
+
+Using the throw makes sense in a method that has been called, but in
+that case you catch the thrown exception in the caller, which in this
+case is your main.
+
+Nice work, Nick!
+
+Total course grade so far:
+homework00 @  5%:  100.00% =  5.00 points
+homework01 @  5%:  100.00% =  5.00 points
+homework02 @  5%:  100.00% =  5.00 points
+homework03 @ 10%:   92.59% =  9.26 points
+class part @ 10%:  100.00% = 10.00 points
+
+                     total:  34.26 out of 35.00 points = 97.89% which is an A-plus
