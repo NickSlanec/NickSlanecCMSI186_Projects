@@ -39,21 +39,21 @@ public class Ball {
   }
 
   public double[] friction(double timeSlice) {
-    velocity[0] *= (timeSlice * .99);
-    velocity[1] *= (timeSlice * .99);
+    velocity[0] *= (Math.pow(.99, timeSlice));
+    velocity[1] *= (Math.pow(.99, timeSlice));
     return velocity;
   }
 
   // Moves ball for each time slice
-  public double[] move() {
-    position[0] += velocity[0];
-    position[1] += velocity[1];
+  public double[] move(double timeSlice) {
+    position[0] += (velocity[0] * timeSlice);
+    position[1] += (velocity[1] * timeSlice);
     return position;
   }
 
   public boolean isOutOfBounds() {
     if ((Math.abs(position[0]) > MAXIMUM_X_POSITION) || (Math.abs(position[1]) > MAXIMUM_Y_POSITION)) {
-      System.out.println("Out of Bounds");
+      System.out.println("> Out of Bounds <");
       return true;
     }
     return false;

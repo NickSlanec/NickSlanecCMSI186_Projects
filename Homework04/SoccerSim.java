@@ -8,13 +8,16 @@ public class SoccerSim {
   private static Ball[] ball = null;
   private static double timeSlice = 1.00;
   private static int stillBallCounter = 0;
+  private static double MAX_TIME_SLICE = 1800.00;
+  private static int iterationCounter = 0;
 
   private static int determineBalls() {
-    if (globalArgs.length % 4 == 0){
+    if ((globalArgs.length % 4 == 0) && globalArgs.length > 3){
       numBalls = (globalArgs.length / 4);
     } else if ((globalArgs.length % 4) - 1 == 0) {
       numBalls = ((globalArgs.length -1) / 4);
-      timeSlice = (Double.parseDouble(globalArgs[globalArgs.length - 1]));
+    } else if (globalArgs.length <= 3) {
+      throw new IllegalArgumentException("Invalid number of arguments");
     } else {
       throw new IllegalArgumentException("Invalid number of arguments");
     }
@@ -22,11 +25,28 @@ public class SoccerSim {
     return numBalls;
   }
 
+  private static double validateTimeSlice(){
+    if (globalArgs.length % 4 == 0) {
+      timeSlice = 1.00;
+    } else if (globalArgs.length % 4 == 1){
+      if ((Double.parseDouble(globalArgs[globalArgs.length - 1])) <= 0 || (Double.parseDouble(globalArgs[globalArgs.length - 1])) > MAX_TIME_SLICE){
+        throw new IllegalArgumentException ("Invalid Time Slice");
+      } else {
+        timeSlice = (Double.parseDouble(globalArgs[globalArgs.length - 1]));
+      }
+    }
+    return timeSlice;
+  }
+
 
   private static Ball[] createBalls() {
     ball = new Ball[numBalls];
     int j = 0;
-    for(int i = 0; i < globalArgs.length; i += 4){
+    int argumentLength = globalArgs.length;
+    if (globalArgs.length % 4 == 1){
+      argumentLength -= 1;
+    }
+    for(int i = 0; i < argumentLength; i += 4){
       if ((Ball.isPositionValid(globalArgs[i], globalArgs[i + 1])) == true) {
         ball[j] = new Ball(Double.parseDouble(globalArgs[i]), Double.parseDouble(globalArgs[i+1]), Double.parseDouble(globalArgs[i+2]), Double.parseDouble(globalArgs[i+3]));
         System.out.println("Ball " + j + " created at: " + ball[j].toStringPosition());
@@ -46,7 +66,7 @@ public class SoccerSim {
         return true;
       }
     }
-    System.out.println("No collision with the pole");
+    //System.out.println("No collision with the pole");
     return false;
   }
 
@@ -60,7 +80,7 @@ public class SoccerSim {
         }
       }
     }
-    System.out.println("No collision between balls");
+    //System.out.println("No collision between balls");
     return false;
   }
 
@@ -68,6 +88,7 @@ public class SoccerSim {
     Clock clock = new Clock();
     globalArgs = args;
     determineBalls();
+    validateTimeSlice();
     createBalls();
     while (true){
       System.out.println("Time is: " + clock.toString()+ "\n");
@@ -75,7 +96,6 @@ public class SoccerSim {
       for (int i = 0; i < numBalls; i++){
         System.out.println("Ball " + i);
         System.out.println("Position: " + ball[i].toStringPosition());
-        ball[i].friction(timeSlice);
         if (ball[i].isOutOfBounds() == true){
           ball[i].velocity[0] = 0;
           ball[i].velocity[1] = 0;
@@ -84,21 +104,26 @@ public class SoccerSim {
           stillBallCounter++;
         }
         System.out.println("Velocity: " + ball[i].toStringVelocity() + "\n");
-        ball[i].move();
+        ball[i].move(timeSlice);
+        ball[i].friction(timeSlice);
       }
 
       if (isPoleColliding() == true) {
+        System.out.println ("The simulation took " + iterationCounter + " iterations");
         break;
       }
       if (isBallColliding() == true) {
+        System.out.println ("The simulation took " + iterationCounter + " iterations");
         break;
       }
       if (stillBallCounter == numBalls){
         System.out.println("**All balls came to rest without contact**");
+        System.out.println ("The simulation took " + iterationCounter + " iterations");
         break;
       } else {
         stillBallCounter = 0;
       }
+      iterationCounter += 1;
       clock.tick(timeSlice);
       System.out.println("---------------------------------------------------");
     }
