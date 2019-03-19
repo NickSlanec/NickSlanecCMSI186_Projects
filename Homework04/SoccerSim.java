@@ -51,7 +51,7 @@ public class SoccerSim {
         ball[j] = new Ball(Double.parseDouble(globalArgs[i]), Double.parseDouble(globalArgs[i+1]), Double.parseDouble(globalArgs[i+2]), Double.parseDouble(globalArgs[i+3]));
         System.out.println("Ball " + j + " created at: " + ball[j].toStringPosition());
         j++;
-      }
+      } 
     }
     System.out.println("Pole created at: " + polePosition[0] + ", " + polePosition[1]);
     System.out.println("-------------------------------------------------------------------------------------------");
@@ -118,7 +118,7 @@ public class SoccerSim {
       }
       if (stillBallCounter == numBalls){
         System.out.println("**All balls came to rest without contact**");
-        System.out.println ("The simulation took " + iterationCounter + " iterations");
+        System.out.println ("The simulation took " + iterationCounter + " iterations to complete.");
         break;
       } else {
         stillBallCounter = 0;
