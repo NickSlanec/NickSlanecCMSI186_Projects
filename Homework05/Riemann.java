@@ -28,7 +28,6 @@ public class Riemann {
       try {
         coeffs = new double[argsLength - 3];
       } catch (NegativeArraySizeException NASE){
-        System.out.println("Incorrect number of coefficents");
       }
     }
     bounds[0] = Double.parseDouble(globalArgs[argsLength - 2]);
@@ -103,14 +102,55 @@ public class Riemann {
   }
 
   public static void testValidateArgs(){
+    System.out.println("Testing validateArgs:");
     String[] testArgs = {"poly","00","8.0","-2.0","1.0","4.0","1e-6%"};
+    determinePercent(testArgs);
     validateArgs(testArgs);
+    System.out.println("\n");
+  }
+
+  public static void testCalculatePoly(){
+    System.out.println("Testing Poly:");
+    String[] testArgs = {"poly","00","8.0","-2.0","1.0","4.0","1e-6%"};
+    determinePercent(testArgs);
+    validateArgs(testArgs);
+    System.out.println("Area with 10 rectangles is: " + poly(10));
+    System.out.println("\n");
+  }
+
+  public static void testCalculateSin(){
+    System.out.println("Testing Sin:");
+    String[] testArgs = {"sin","-17","3","-11","11","1e-7%"};
+    determinePercent(testArgs);
+    validateArgs(testArgs);
+    System.out.println("Area with 10 rectangles is: " + sin(10));
+    System.out.println("\n");
+  }
+
+  public static void testCalculateCos(){
+    System.out.println("Testing Cos:");
+    String[] testArgs = {"sin","-17","3","-11","11","1e-7%"};
+    determinePercent(testArgs);
+    validateArgs(testArgs);
+    System.out.println("Area with 10 rectangles is: " + cos(10));
+    System.out.println("\n");
+  }
+
+  public static void testCalculateTan(){
+    System.out.println("Testing Tan:");
+    String[] testArgs = {"sin","-17","3","-11","11","1e-7%"};
+    determinePercent(testArgs);
+    validateArgs(testArgs);
+    System.out.println("Area with 10 rectangles is: " + tan(10));
+    System.out.println("\n");
   }
 
   public static void runMyTests(){
     testValidateArgs();
-    //testCalculatePoly();
-    //testCalculateSine();
+    testCalculatePoly();
+    testCalculateSin();
+    testCalculateCos();
+    testCalculateTan();
   }
 
   public static void main(String args[]){
@@ -118,18 +158,24 @@ public class Riemann {
     double previousTotalArea;
     double currentTotalArea;
     int n = 1;
+    if(globalArgs.length >= 1){
     switch (globalArgs[0]){
       case "runtests": runMyTests();
+      break;
       case "poly":
       try {
         determinePercent(globalArgs);
         validateArgs(globalArgs);
+        if (globalArgs.length <= 3){
+          System.out.println("Not enough arguments. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. \n Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)");
+          System.exit(0);
+        }
         System.out.println("Bounds: " + bounds[0] + ", " + bounds[1] +"\n");
       } catch (NumberFormatException nfe) {
-        System.out.println("Please enter a valid argument");
+        System.out.println("Please enter a valid argument. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. \n Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)");
         System.exit(0);
       } catch (ArrayIndexOutOfBoundsException aioobe){
-        System.out.println("Not enough arguments");
+        System.out.println("Not enough arguments. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. \n Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)");
         System.exit(0);
       }
             while (true) {
@@ -240,11 +286,13 @@ public class Riemann {
               n += 2;
             }
             break;
-      default: System.out.println("Please enter a valid function type. Possible types include: poly, sin, cos, tan");
+      default: System.out.println("Please enter a valid function type. Possible types include: poly, sin, cos, tan \n Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)");
+      break;
     }
-
+  } else {
+    System.out.println("Please enter a command that follows this formula: Java Riemann functionName additionalDescriptors lowerBound upperBound \n Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)");
+  }
   }
 
 }
 //cd OneDrive\Computer Science 186\Homework05
-//javac Riemann.java && java Riemann poly 0 8 -2 -3 4 1e-6%
