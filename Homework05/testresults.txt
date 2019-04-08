@@ -1,0 +1,392 @@
+.                                                                              
+=====================================================                          
+Testing the Riemann Ingetration Project Homework # 05                          
+=====================================================                          
+.                                                                              
+.                                                                              
+... Running built-in tests in the Riemann class                                
+...   should either throw exceptions which will not appear in the output file  
+...     but which should be caught to keep the test program running            
+...   or preferably output error messages which SHOULD appear there then quit  
+Testing validateArgs:
+Coefficient 0 is: 0.0
+Coefficient 1 is: 8.0
+Coefficient 2 is: -2.0
+
+
+Testing Poly:
+Coefficient 0 is: 0.0
+Coefficient 1 is: 8.0
+Coefficient 2 is: -2.0
+Area with 10 rectangles is: 18.045000000000005
+
+
+Testing Sin:
+Coefficient 0 is: -17.0
+Coefficient 1 is: 3.0
+Area with 10 rectangles is: -13.406946358716572
+
+
+Testing Cos:
+Coefficient 0 is: -17.0
+Coefficient 1 is: 3.0
+Area with 10 rectangles is: 3.8372266875076715
+
+
+Testing Tan:
+Coefficient 0 is: -17.0
+Coefficient 1 is: 3.0
+Area with 10 rectangles is: -8.59443867333358
+
+
+.                                                                              
+.                                                                              
+============================================================================   
+Testing bogus function name 'bogus'                                            
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing bogus function name 'poly' with no arguments                           
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Not enough arguments. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with only one arg                           
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Please enter a valid argument. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with only two args                          
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Not enough arguments. You need at least 3 arguments for poly: 1 coefficient and 2 bounds. 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with four args with negative final arg      
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Cannot have the second bound smaller than the first bound
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with four args with zero final arg          
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit  
+============================================================================   
+Cannot have the second bound smaller than the first bound
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with three args and default percentage      
+...should produce a result close to '0.0000'                                   
+============================================================================   
+Coefficient 0 is: 0.0
+Bounds: 1.0, 2.0
+
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with three args with final arg 1e-6%       
+...should produce a result close to '2.0000'                                   
+============================================================================   
+Coefficient 0 is: 2.0
+Bounds: 1.0, 2.0
+
+Number of rectangles used: 2
+Area under the curve is: 2.0
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with test case parabola args and 1e-6%     
+...should produce a result close to '18.0000'                                  
+============================================================================   
+Coefficient 0 is: 0.0
+Coefficient 1 is: 8.0
+Coefficient 2 is: -2.0
+Bounds: 1.0, 4.0
+
+Number of rectangles used: 80
+Area under the curve is: 18.00070312499996
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with test case parabola args and default    
+...should produce a result close to '18.1800'                                  
+============================================================================   
+Coefficient 0 is: 0.0
+Coefficient 1 is: 8.0
+Coefficient 2 is: -2.0
+Bounds: 1.0, 4.0
+
+Number of rectangles used: 6
+Area under the curve is: 18.125
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' with web page args and default              
+...should produce a result close to '1268.75'                                  
+============================================================================   
+Coefficient 0 is: 1.0
+Coefficient 1 is: -2.1
+Coefficient 2 is: 3.2
+Bounds: -10.0, 5.0
+
+Number of rectangles used: 6
+Area under the curve is: 1268.75
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'poly' for x\5 - 2X\3 - X\2 - 7X - 3            
+   from 0 to 2 with 1e-6%                                                    
+...should produce a result close to '-20.00'                                   
+============================================================================   
+Coefficient 0 is: -3.0
+Coefficient 1 is: -7.0
+Coefficient 2 is: -1.0
+Coefficient 3 is: -2.0
+Coefficient 4 is: 0.0
+Coefficient 5 is: 1.0
+Bounds: 0.0, 2.0
+
+Number of rectangles used: 96
+Area under the curve is: -20.00094033857435
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with web page args and default               
+...should produce a result close to '1.9137'                                   
+============================================================================   
+Bounds: -0.27, 3.55
+
+Number of rectangles used: 5
+Area under the curve is: 1.913682897150073
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -3.45 6.789 and 1.5e-4%           
+...should produce a result close to '-1.8278'                                  
+============================================================================   
+Bounds: -3.45, 6.789
+
+Number of rectangles used: 39
+Area under the curve is: -1.8325973831768556
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args 0.0 1.0 -3.45 6.789 and 1.5e-4%   
+...should produce a result close to '-1.8278'                                  
+============================================================================   
+Coefficient 0 is: 0.0
+Coefficient 1 is: 1.0
+Bounds: -3.45, 6.789
+
+Number of rectangles used: 39
+Area under the curve is: -1.8325973831768556
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -17.0 3.0 -11.0 11.0 and 1e-7%    
+...should produce a result close to '0.6409'                                   
+============================================================================   
+Coefficient 0 is: -17.0
+Coefficient 1 is: 3.0
+Bounds: -11.0, 11.0
+
+Number of rectangles used: 1537
+Area under the curve is: 0.6409243464578326
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sin' with args -17.0 1.0 -23.0 23.0 and 1e-4%    
+...should produce a result close to '-1.6276'                                  
+============================================================================   
+Coefficient 0 is: -17.0
+Coefficient 1 is: 1.0
+Bounds: -23.0, 23.0
+
+Number of rectangles used: 121
+Area under the curve is: -1.6367867816257147
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 23.0 -3.0 7.0 1.0 7.0 and 1e-6%  
+...should output a result close to 67.8939                                     
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 100.0 0.0 1.0 and 1e-8%          
+...should output a result close to 10.0                                        
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args -100.0 0.0 1.0 and 1e-8%         
+...should either throw an exception which will not appear in the output file   
+...  or preferably ouput error messages which SHOULD appear there, then quit   
+...  Also acceptable is the java output of 'NaN'                               
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'sqrt' with args 2.0 0.0 1.0 and 1e-3%            
+...should output a result close to 1.4142                                      
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with web page args and default               
+...should produce a result close to '-0.1326'                                  
+============================================================================   
+Bounds: -0.27, 3.55
+
+Number of rectangles used: 5
+Area under the curve is: -0.13264570679545507
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -3.45 6.789 and 1.5e-4%           
+...should produce a result close to '0.1810'                                   
+============================================================================   
+Bounds: -3.45, 6.789
+
+Number of rectangles used: 39
+Area under the curve is: 0.18147380740237815
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args 0.0 1.0 -3.45 6.789 and 1.5e-4%   
+...should produce a result close to '0.1810'                                   
+============================================================================   
+Coefficient 0 is: 0.0
+Coefficient 1 is: 1.0
+Bounds: -3.45, 6.789
+
+Number of rectangles used: 39
+Area under the curve is: 0.18147380740237815
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -17.0 3.0 -11.0 11.0 and 1e-7%    
+...should produce a result close to '-0.1834'                                  
+============================================================================   
+Coefficient 0 is: -17.0
+Coefficient 1 is: 3.0
+Bounds: -11.0, 11.0
+
+Number of rectangles used: 1537
+Area under the curve is: -0.18344013178691412
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'cos' with args -17.0 1.0 -23.0 23.0 and 1e-4%    
+...should produce a result close to '0.4658'                                   
+============================================================================   
+Coefficient 0 is: -17.0
+Coefficient 1 is: 1.0
+Bounds: -23.0, 23.0
+
+Number of rectangles used: 121
+Area under the curve is: 0.46846774441899686
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args -0.5 1.25 and default              
+...should produce a result close to '1.0029'                                   
+============================================================================   
+Bounds: -0.5, 1.25
+
+Number of rectangles used: 7
+Area under the curve is: 1.0074022941615608
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args -0.5 1.25 and 1.5e-4%             
+...should produce a result close to '1.0235'                                   
+============================================================================   
+Bounds: -0.5, 1.25
+
+Number of rectangles used: 25
+Area under the curve is: 1.021935856789788
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'tan' with args 0.0 1.0 -0.5 1.25 and 1.5e-4%     
+...should produce a result close to '1.0235'                                   
+============================================================================   
+Coefficient 0 is: 0.0
+Coefficient 1 is: 1.0
+Bounds: -0.5, 1.25
+
+Number of rectangles used: 25
+Area under the curve is: 1.021935856789788
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log' with args 0.0 1.0 1.1 2.3 and 1e-5%         
+...should produce a result close to '0.6109'                                   
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'log'                                              
+...should produce a result close to '0.6140'                                   
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with web page args and default prct          
+...should produce a result close to '25.5763'                                  
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with web page args and 1.6e-7%              
+...should produce a result close to '25.7264'                                  
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+Testing valid function name 'exp' with 0.0 1.0 2.0 3.5 and 1e-7%              
+...should produce a result close to '25.7264'                                  
+============================================================================   
+Please enter a valid function type. Possible types include: poly, sin, cos, tan 
+ Use the format: Java Riemann functionName coefficients lowerBound upperBound percent(optional)
+.                                                                              
+.                                                                              
+============================================================================   
+End of Testing                                                                 
+============================================================================   
