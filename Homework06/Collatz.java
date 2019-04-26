@@ -25,7 +25,7 @@
 
    int loops = 0;
    BrobInt arg = new BrobInt(args[0]);
-   System.out.println(arg.toString());
+   System.out.println("Input: " + arg.toString());
 
    while(arg.equals(BrobInt.ONE) == false){
      if(arg.remainder(BrobInt.TWO).equals(BrobInt.ZERO)){
@@ -38,6 +38,5 @@
      }
    }
    System.out.println("Loops: " + loops);
-   //System.out.println("Arg: " + arg);
   }
 }

@@ -120,8 +120,8 @@ public class BrobInt {
    public void validateDigits() {
      for (int i = 0; i < internalValue.length(); i++){
        if(Character.isDigit(internalValue.charAt(i)) == false){
-         System.out.println("InternalValue.length: " + internalValue.length());
-         System.out.println("InternalValue: " + internalValue);
+         //System.out.println("InternalValue.length: " + internalValue.length());
+         //System.out.println("InternalValue: " + internalValue);
          throw new IllegalArgumentException("Illegal Argument at character: " + i);
        }
      }
