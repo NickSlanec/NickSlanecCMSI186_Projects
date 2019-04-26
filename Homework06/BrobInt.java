@@ -120,8 +120,8 @@ public class BrobInt {
    public void validateDigits() {
      for (int i = 0; i < internalValue.length(); i++){
        if(Character.isDigit(internalValue.charAt(i)) == false){
-         System.out.println("InternalValue.length: " + internalValue.length());
-         System.out.println("InternalValue: " + internalValue);
+         //System.out.println("InternalValue.length: " + internalValue.length());
+         //System.out.println("InternalValue: " + internalValue);
          throw new IllegalArgumentException("Illegal Argument at character: " + i);
        }
      }
@@ -228,11 +228,14 @@ public class BrobInt {
      }
 
      if (this.sign == 0 && bint.sign == 0) {
-           if (compareTo(bint) == 1) {
+       // System.out.println("Both Positive");
+           if (compareToAbs(bint) == 1) {
              minBint = bint;
+             // System.out.println("Bint(Min): "+ bint.toString());
              maxBint = this;
+             // System.out.println("This(Max): "+ this.toString());
              returnSign = 0;
-           } else if (compareTo(bint) == -1) {
+           } else if (compareToAbs(bint) == -1) {
              minBint = this;
              maxBint = bint;
              returnSign = 1;
@@ -485,6 +488,9 @@ public class BrobInt {
    public BrobInt remainder( BrobInt bint ) {
      BrobInt g1 = this;
      BrobInt g2 = bint;
+     System.out.println("g1 / g2 " + g1.divide(g2));
+     System.out.println("Subtract and divide" + g1.subtract(g1.divide(g2)));
+     System.out.println("All" + g1.subtract(g1.divide(g2).multiply(g2)));
      BrobInt answer = g1.subtract(g1.divide(g2).multiply(g2));
      if(answer.equals(BrobInt.ZERO)){
        return BrobInt.ZERO;
@@ -691,9 +697,9 @@ public class BrobInt {
       // try { System.out.println( "      expecting: 248498500\n        and got: " + BrobInt.THREE.multiply( new BrobInt( "82832833" ) ).add( BrobInt.ONE ) ); }
       // catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
       // System.exit( 0 );
-      BrobInt g11 = new BrobInt("20");
-      BrobInt g12 = new BrobInt("2");
-      System.out.println(g11.remainder(g12));
+      BrobInt g11 = new BrobInt("159482673357869421789456123");
+      BrobInt g12 = new BrobInt("158676046678934710894728061");
+      System.out.println(g11.subtract(g12));
 
 
    }
