@@ -54,7 +54,7 @@ public class PiSolver {
                 System.out.print("Estimated Pi: " + df2.format(estimatedPi));
             }
             double x = (Math.floor(Math.random() * (r*2)) + 1);                                    // Random x co-ordinate
-            double y = (Math.floor(Math.random() * (r*2)) + 1); // Random y co-ordinate
+            double y = (Math.floor(Math.random() * (r*2)) + 1);                                    // Random y co-ordinate
             double d = Math.sqrt((Math.pow(centerX - x, 2)) + (Math.pow(centerY - y, 2)));         // Determines distance from center
             if(debugOn == true){
                 System.out.println("X: " + x);
