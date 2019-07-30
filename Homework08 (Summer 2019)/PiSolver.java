@@ -15,6 +15,8 @@
  *  1.0.0  2019-07-26  Nick Slanec   Initial writing
  *  1.1.0  2019-07-29  Nick Slanec   Removed any hardcoding, Created default input, Created feature to
  *                                   turn on debug from terminal
+ *  1.2.0  2019-07-30  Nick Slanec   Added a time remaining feature that calculates how much time is left
+ *                                   in the process and displays it in the terminal
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 public class PiSolver {
