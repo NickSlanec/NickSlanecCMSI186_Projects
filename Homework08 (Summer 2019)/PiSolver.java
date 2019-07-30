@@ -27,7 +27,7 @@ import java.text.DecimalFormat;
 public class PiSolver {
     public static double total = 0;
     public static double circle = 0;
-    public static long points = 10000; // Default number of darts
+    public static long points = 100000000; // Default number of darts
     public static double pi = 0;
     public static int r = 50; // Radius of circle
     public static boolean debugOn = false;
@@ -93,7 +93,7 @@ public class PiSolver {
             }
         }
         pi = simulate(points);
-        System.out.println("Estimating Pi using " + points + " points.");
+        System.out.println("Estimated Pi using " + points + " points.");
         System.out.println("Pi is: " + pi);
     }
 
